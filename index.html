@@ -29,16 +29,17 @@
             }
         }
 
+        /* Default Layout for Mobile (Aligned to top) */
         body {
             margin: 0;
-            padding: 20px;
+            padding: 40px 20px 20px 20px; /* Gives a clean top margin on mobile */
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start; /* Pulls the card upward on mobile */
             min-height: 100vh;
             box-sizing: border-box;
             transition: background-color 0.3s ease, color 0.3s ease;
@@ -119,7 +120,6 @@
             box-sizing: border-box;
         }
 
-        /* Default Layout for Mobile */
         .links-wrapper {
             display: flex;
             flex-direction: column;
@@ -171,13 +171,17 @@
             .fa-x-twitter, .fa-steam { color: #ffffff; }
         }
 
-        /* Desktop Mode Spacing Fixes */
+        /* Desktop Mode Layout Overrides */
         @media (min-width: 768px) {
+            body {
+                justify-content: center; /* Centers everything vertically again on Desktop */
+                padding: 20px;
+            }
             .links-wrapper {
                 gap: 26px; /* Larger spacing between buttons on desktop */
             }
             .profile-container {
-                padding: 45px 30px; /* Slightly expanded card padding on desktop */
+                padding: 45px 30px; /* Expanded card padding on desktop */
             }
         }
     </style>
