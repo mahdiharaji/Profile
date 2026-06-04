@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #e0e5ec;
+            --text-color: #333333;
+            --shadow-light: #ffffff;
+            --shadow-dark: #a3b1c6;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #292d32;
+                --text-color: #eeeeee;
+                --shadow-light: #3d434a;
+                --shadow-dark: #15171a;
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 380px;
+            padding: 40px 20px;
+            border-radius: 30px;
+            background-color: var(--bg-color);
+            box-shadow: 10px 10px 20px var(--shadow-dark), 
+                       -10px -10px 20px var(--shadow-light);
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 25px;
+            object-fit: cover;
+            border: 4px solid var(--bg-color);
+            box-shadow: 8px 8px 16px var(--shadow-dark), 
+                       -8px -8px 16px var(--shadow-light);
+        }
+
+        .links-wrapper {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 20px;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 20px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 15px;
+            background-color: var(--bg-color);
+            box-shadow: 6px 6px 12px var(--shadow-dark), 
+                       -6px -6px 12px var(--shadow-light);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .link-btn:active {
+            box-shadow: inset 4px 4px 8px var(--shadow-dark), 
+                        inset -4px -4px 8px var(--shadow-light);
+        }
+
+        .link-btn i {
+            font-size: 1.25rem;
+        }
+        
+        .fa-whatsapp { color: #25D366; }
+        .fa-telegram { color: #0088cc; }
+        .fa-reddit { color: #FF4500; }
+        .fa-envelope { color: #D44638; }
+        @media (prefers-color-scheme: light) {
+            .fa-x-twitter, .fa-steam { color: #000000; }
+        }
+        @media (prefers-color-scheme: dark) {
+            .fa-x-twitter, .fa-steam { color: #ffffff; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        <img src="https://avatars.githubusercontent.com/u/39735743" alt="Profile Avatar" class="avatar">
+        
+        <div class="links-wrapper">
+            <a href="https://wa.me/+989179703892" class="link-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://t.me/buggydude" class="link-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-telegram"></i> Telegram
+            </a>
+            <a href="https://x.com/xXM0NARCHXx" class="link-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-x-twitter"></i> Twitter / X
+            </a>
+            <a href="https://www.reddit.com/u/Jueyuan/" class="link-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-reddit"></i> Reddit
+            </a>
+            <a href="mailto:mahdiharaji@gmail.com" class="link-btn">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+            <a href="https://steamcommunity.com/id/monarch4ever" class="link-btn" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-steam"></i> Steam
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
