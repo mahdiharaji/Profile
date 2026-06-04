@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Links</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Mahdi Haraji | Profile</title>
+    <!-- FontAwesome 6 for updated brand icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts for high-quality Nastaliq rendering cross-platform -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&display=swap" rel="stylesheet">
     <style>
+        /* Light Mode (Default) Variables */
         :root {
             --bg-color: #e0e5ec;
             --text-color: #333333;
@@ -13,6 +19,7 @@
             --shadow-dark: #a3b1c6;
         }
 
+        /* Auto Dark Mode Variables */
         @media (prefers-color-scheme: dark) {
             :root {
                 --bg-color: #292d32;
@@ -37,37 +44,88 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
+        /* Neumorphic Container Card */
         .profile-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
-            max-width: 380px;
-            padding: 40px 20px;
+            max-width: 400px;
+            padding: 35px 25px;
             border-radius: 30px;
             background-color: var(--bg-color);
             box-shadow: 10px 10px 20px var(--shadow-dark), 
                        -10px -10px 20px var(--shadow-light);
+            box-sizing: border-box;
         }
 
+        /* Alignment Row for Avatar + Text */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            gap: 22px;
+            margin-bottom: 20px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Left-aligned Avatar Styling */
         .avatar {
-            width: 120px;
-            height: 120px;
+            width: 115px;
+            height: 115px;
             border-radius: 50%;
-            margin-bottom: 25px;
             object-fit: cover;
-            border: 4px solid var(--bg-color);
-            box-shadow: 8px 8px 16px var(--shadow-dark), 
-                       -8px -8px 16px var(--shadow-light);
+            border: 3px solid var(--bg-color);
+            box-shadow: 6px 6px 12px var(--shadow-dark), 
+                       -6px -6px 12px var(--shadow-light);
+            flex-shrink: 0;
+        }
+
+        /* Header Text Styling */
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin: 0 0 4px 0;
+        }
+
+        .profile-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            opacity: 0.75;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+
+        /* Persian Nastaliq Status Styling */
+        .status-text {
+            font-family: 'Noto Nastaliq Urdu', 'IranNastaliq', 'Segoe UI Nastaliq', cursive;
+            text-align: center;
+            direction: rtl;
+            font-size: 1.5rem;
+            line-height: 2.4rem; /* Generous line-height to prevent Nastaliq script clipping */
+            color: var(--text-color);
+            margin-bottom: 25px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .links-wrapper {
             display: flex;
             flex-direction: column;
             width: 100%;
-            gap: 20px;
+            gap: 18px;
         }
 
+        /* Neumorphic Button Styling */
         .link-btn {
             display: flex;
             align-items: center;
@@ -80,11 +138,12 @@
             font-size: 1rem;
             border-radius: 15px;
             background-color: var(--bg-color);
-            box-shadow: 6px 6px 12px var(--shadow-dark), 
-                       -6px -6px 12px var(--shadow-light);
+            box-shadow: 5px 5px 10px var(--shadow-dark), 
+                       -5px -5px 10px var(--shadow-light);
             transition: all 0.2s ease-in-out;
         }
 
+        /* Interactive "Pressed" State */
         .link-btn:active {
             box-shadow: inset 4px 4px 8px var(--shadow-dark), 
                         inset -4px -4px 8px var(--shadow-light);
@@ -92,12 +151,16 @@
 
         .link-btn i {
             font-size: 1.25rem;
+            width: 24px;
+            text-align: center;
         }
         
+        /* Subtle Icon Colors */
         .fa-whatsapp { color: #25D366; }
         .fa-telegram { color: #0088cc; }
         .fa-reddit { color: #FF4500; }
         .fa-envelope { color: #D44638; }
+        
         @media (prefers-color-scheme: light) {
             .fa-x-twitter, .fa-steam { color: #000000; }
         }
@@ -109,26 +172,42 @@
 <body>
 
     <div class="profile-container">
-        <img src="https://avatars.githubusercontent.com/u/39735743" alt="Profile Avatar" class="avatar">
+        <!-- Profile Header Section -->
+        <div class="profile-header">
+            <img src="https://avatars.githubusercontent.com/u/39735743" alt="Mahdi Haraji" class="avatar">
+            <div class="profile-info">
+                <h1 class="profile-name">Mahdi Haraji</h1>
+                <p class="profile-title">⋈ monarch ⋈</p>
+            </div>
+        </div>
+
+        <!-- Persian Status Text -->
+        <div class="status-text">مرا داد فرمود و خود داور است</div>
         
+        <!-- Link Buttons -->
         <div class="links-wrapper">
             <a href="https://wa.me/+989179703892" class="link-btn" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-whatsapp"></i> WhatsApp
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
             </a>
+            
             <a href="https://t.me/buggydude" class="link-btn" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-telegram"></i> Telegram
+                <i class="fa-brands fa-telegram"></i> Telegram
             </a>
+            
             <a href="https://x.com/xXM0NARCHXx" class="link-btn" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-x-twitter"></i> Twitter / X
+                <i class="fa-brands fa-x-twitter"></i> Twitter / X
             </a>
+            
             <a href="https://www.reddit.com/u/Jueyuan/" class="link-btn" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-reddit"></i> Reddit
+                <i class="fa-brands fa-reddit"></i> Reddit
             </a>
+            
             <a href="mailto:mahdiharaji@gmail.com" class="link-btn">
-                <i class="fas fa-envelope"></i> Email
+                <i class="fa-solid fa-envelope"></i> Email
             </a>
+            
             <a href="https://steamcommunity.com/id/monarch4ever" class="link-btn" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-steam"></i> Steam
+                <i class="fa-brands fa-steam"></i> Steam
             </a>
         </div>
     </div>
