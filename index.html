@@ -128,12 +128,24 @@
             transition: gap 0.3s ease;
         }
 
+        /* Split Row Layout for Call / Message Buttons */
+        .split-row {
+            display: flex;
+            width: 100%;
+            gap: 18px;
+            transition: gap 0.3s ease;
+        }
+
+        .split-row .link-btn {
+            flex: 1; /* Forces both buttons to be exactly half width */
+        }
+
         /* Neumorphic Button Styling */
         .link-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 20px; /* Increased spacing between icons and text */
             padding: 16px 20px;
             text-decoration: none;
             color: var(--text-color);
@@ -145,7 +157,7 @@
                        -5px -5px 10px var(--shadow-light);
             transition: all 0.2s ease-in-out;
             
-            /* FIXES FOR MOBILE TAP HIGHLIGHT */
+            /* Fixes for mobile tap blue highlight */
             -webkit-tap-highlight-color: transparent; 
             outline: none;
         }
@@ -163,6 +175,8 @@
         }
         
         /* Subtle Icon Colors */
+        .fa-phone { color: #2ecc71; }
+        .fa-comment-dots { color: #3498db; }
         .fa-whatsapp { color: #25D366; }
         .fa-telegram { color: #0088cc; }
         .fa-reddit { color: #FF4500; }
@@ -181,7 +195,7 @@
                 justify-content: center;
                 padding: 20px;
             }
-            .links-wrapper {
+            .links-wrapper, .split-row {
                 gap: 26px;
             }
             .profile-container {
@@ -207,6 +221,17 @@
         
         <!-- Link Buttons -->
         <div class="links-wrapper">
+            <!-- Split Call and Message Buttons -->
+            <div class="split-row">
+                <a href="tel:+989179703892" class="link-btn">
+                    <i class="fa-solid fa-phone"></i> Call
+                </a>
+                <a href="sms:+989179703892" class="link-btn">
+                    <i class="fa-solid fa-comment-dots"></i> Message
+                </a>
+            </div>
+
+            <!-- Full Width Buttons -->
             <a href="https://wa.me/+989179703892" class="link-btn" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-whatsapp"></i> WhatsApp
             </a>
