@@ -57,6 +57,7 @@
             box-shadow: 10px 10px 20px var(--shadow-dark), 
                        -10px -10px 20px var(--shadow-light);
             box-sizing: border-box;
+            transition: padding 0.3s ease;
         }
 
         /* Alignment Row for Avatar + Text */
@@ -110,19 +111,21 @@
             font-family: 'Noto Nastaliq Urdu', 'IranNastaliq', 'Segoe UI Nastaliq', cursive;
             text-align: center;
             direction: rtl;
-            font-size: 1.5rem;
-            line-height: 2.4rem; /* Generous line-height to prevent Nastaliq script clipping */
+            font-size: 1.25rem;
+            line-height: 2.4rem;
             color: var(--text-color);
             margin-bottom: 25px;
             width: 100%;
             box-sizing: border-box;
         }
 
+        /* Default Layout for Mobile */
         .links-wrapper {
             display: flex;
             flex-direction: column;
             width: 100%;
-            gap: 18px;
+            gap: 18px; /* Mobile button spacing */
+            transition: gap 0.3s ease;
         }
 
         /* Neumorphic Button Styling */
@@ -166,6 +169,16 @@
         }
         @media (prefers-color-scheme: dark) {
             .fa-x-twitter, .fa-steam { color: #ffffff; }
+        }
+
+        /* Desktop Mode Spacing Fixes */
+        @media (min-width: 768px) {
+            .links-wrapper {
+                gap: 26px; /* Larger spacing between buttons on desktop */
+            }
+            .profile-container {
+                padding: 45px 30px; /* Slightly expanded card padding on desktop */
+            }
         }
     </style>
 </head>
